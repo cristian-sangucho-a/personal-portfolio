@@ -1,9 +1,25 @@
 ---
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Card from "../components/Card.astro";
+import Bio from "../components/Bio.astro";
 ---
 
-<Layout title="" />
+<Layout title="">
+  <main
+    class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-10 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-12 lg:gap-4"
+  >
+    <Card
+      colSpan="lg:col-span-9 md:col-span-2"
+      rowSpan="md:row-span-1 lg:row-span-4"
+    >
+      <Bio />
+    </Card>
+    <Card
+      colSpan="lg:col-span-3 md:col-span-1"
+      rowSpan="md:row-span-3 lg:row-span-6"
+      title="About me"
+    >
+      <AboutMe />
+    </Card>
+  </main>
+</Layout>
