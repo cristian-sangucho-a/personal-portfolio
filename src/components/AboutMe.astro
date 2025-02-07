@@ -1,0 +1,28 @@
+---
+import { PROFILE } from "../content/PROFILE";
+---
+
+<div class="animate-appear flex flex-col gap-2">
+  <p class="mb-1 text-sm font-thin">
+    {PROFILE.headLine}
+  </p>
+
+  <p class="mb-1 text-base font-medium">
+    {PROFILE.headLine2}
+  </p>
+
+  <hr />
+
+  <p class="text-sm font-thin">I use the following technologies:</p>
+  <ul class="list-inside list-disc">
+    {PROFILE.skills.map((skill) => <li>{skill}</li>)}
+  </ul>
+
+  <p class="text-sm font-light">
+    More about my <a href="/projects" class="underline hover:font-bold"
+      >Projects</a
+    > and my <a href="/experiences" class="underline hover:font-bold"
+      >Experiences</a
+    >.
+  </p>
+</div>
