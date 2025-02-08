@@ -5,11 +5,11 @@ export const PROFILE = {
       //     more complicated description for SEO
       title: "Cristian Sangucho",
       short_description:
-        "Learn, Share and Grow ❤️ -- Software Engineer | AWS Professional | Open Source Lover  --☘️ Be more productive, Better in communicating, Contribute more to community.",
+        "Learn, Share and Grow 🚀 -- Student of Software Engineer",
     },
   },
   name: "Cristian Sangucho",
-  headLine: "Learn, Share and Grow ❤️",
+  headLine: "Learn, Share and Grow 🚀",
   headLine2:
     "I enjoy providing software solutions and bring ideas to life and solve real-world problems.",
   website: "",
@@ -20,8 +20,7 @@ export const PROFILE = {
     "☁️ Google Cloud Architect Learning Path in progress",
     "💡 Inspired by Improving Workflows and Realizing Innovative Ideas",
     "🌱 Lifelong Learner",
-    "🎥 Photo and video editing | 🐾  | 🎮 Video games",
-    // "📚 Book reader | 🥏 Frisbee Ultimate Player | 🎲 Board Game Player",
+    "🎥 Photo and video editing | 🎮 Video games",
   ],
   skills: [
     "Python | Django",
@@ -34,12 +33,12 @@ export const PROFILE = {
     "Astro",
   ],
   links: {
-    github: "",
+    github: "https://github.com/cristian-sangucho-a",
     twitter: "",
     stackoverflow: "",
     devto: "",
-    linkedin: "",
-    credly: "",
+    linkedin: "https://www.linkedin.com/in/cristian-a-sangucho-a7211b276/",
+    credly: "https://www.credly.com/users/cristian-sangucho",
   },
   studies: [
     // studies, qualifications and certifications
