@@ -1,12 +1,13 @@
 ---
 import Tag from "./Tag.astro";
 const { tags } = Astro.props;
+//<a href={`/tags/${i}`}>
 ---
 
 <div class="flex-0 flex flex-wrap gap-1">
   {
     tags.map((i: String) => (
-      <a href={`/tags/${i}`}>
+      <a>
         <Tag className="truncate">{i}</Tag>
       </a>
     ))
