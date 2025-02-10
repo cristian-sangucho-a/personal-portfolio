@@ -4,12 +4,16 @@ interface Props {
   description?: string;
   colSpan?: string;
   rowSpan?: string;
+  className?: string;
 }
 
-const { title, description, colSpan, rowSpan } = Astro.props;
+const { title, description, colSpan, rowSpan, className } = Astro.props;
+const noPadding = className?.includes("p-0");
 ---
 
-<div class={`rounded-lg border bg-white p-4 shadow-md ${colSpan} ${rowSpan}`}>
+<div
+  class={`rounded-2xl border bg-white ${noPadding ? "" : "p-4"} shadow-md ${colSpan} ${rowSpan} ${className}`}
+>
   <h2 class="text-lg font-bold md:text-xl">{title}</h2>
   <p>{description}</p>
   <slot />

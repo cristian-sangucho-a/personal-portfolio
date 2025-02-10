@@ -1,0 +1,27 @@
+---
+import Layout from "./Layout.astro";
+import BreadCrumb from "../components/BreadCrumb.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  subTitle: string;
+}
+
+const { title, description, subTitle } = Astro.props;
+---
+
+<Layout title={title}>
+  <main
+    class="mx-auto flex w-full max-w-screen-lg flex-auto flex-col items-center p-4 md:px-16 md:py-8"
+    transition:name="hero"
+  >
+    <div class="flex w-full justify-start">
+      <BreadCrumb />
+    </div>
+    <h1 class="py-2 text-xl font-bold md:py-5 md:text-3xl">{subTitle}</h1>
+    <p class="mb-2 text-sm italic md:mb-5 md:text-base">{description}</p>
+    <hr class="mb-6 w-full border-t-2 md:mb-12" />
+    <slot />
+  </main>
+</Layout>
