@@ -1,3 +1,3 @@
 {
-  "conventionalCommits.scopes": ["pages", "components", "settings"]
+  "conventionalCommits.scopes": ["pages", "components", "settings", "data"]
 }
