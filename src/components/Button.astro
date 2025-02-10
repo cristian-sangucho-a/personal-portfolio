@@ -1,6 +1,6 @@
 ---
 interface Props {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "link";
   size?: "small" | "medium" | "large";
   href?: string;
 }
@@ -9,8 +9,10 @@ const { variant = "primary", size = "medium", href } = Astro.props;
 
 const baseStyles = "rounded-md focus:outline-none focus:ring";
 const variantStyles = {
-  primary: "bg-primary text-primary-foreground hover:bg-secondary",
+  primary:
+    "bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground",
   secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/50",
+  link: "text-primary underline-offset-4 hover:underline text-opacity-80 text-sm",
 };
 const sizeStyles = {
   small: "px-2 py-1 text-sm",
