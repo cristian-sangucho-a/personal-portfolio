@@ -31,7 +31,7 @@ console.log("technologies:", technologies);
   </div>
 </IndexLayout>
 
-<style>
+<style is:global>
   .mdx-content {
     width: 100%;
     max-width: 100%;
@@ -45,138 +45,47 @@ console.log("technologies:", technologies);
       "Helvetica Neue",
       Arial,
       sans-serif;
-    color: #374151;
-    line-height: 1.8;
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-
-  /* Headers */
-  .mdx-content h1,
-  .mdx-content h2,
-  .mdx-content h3 {
-    text-align: center;
-    color: #111827;
-    margin: 3rem 0 2rem;
-    line-height: 1.3;
-    width: 100%;
-  }
-
-  .mdx-content h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
   }
 
   .mdx-content h2 {
-    font-size: 2rem;
-    font-weight: 700;
+    @apply my-4 pl-4 text-left text-base font-bold md:text-lg;
   }
 
   .mdx-content h3 {
-    font-size: 1.75rem;
-    font-weight: 600;
+    @apply my-2 pl-4 text-left text-sm font-bold italic md:text-base;
   }
 
   /* Paragraphs */
   .mdx-content p {
-    width: 100%;
-    margin: 2rem 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  /* Text paragraphs */
-  .mdx-content p:not(:has(img)) {
-    text-align: left;
-    font-size: 1.125rem;
-    color: #4b5563;
-    line-height: 1.8;
-  }
-
-  /* Image container paragraph */
-  .mdx-content p:has(img:only-child) {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* Images */
-  .mdx-content img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0;
-    padding: 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Small images/badges in text */
-  .mdx-content p:not(:has(img:only-child)) img {
-    width: auto;
-    display: inline-block;
-    vertical-align: middle;
+    @apply text-sm md:text-base;
   }
 
   /* Links */
   .mdx-content a {
-    color: #2563eb;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s ease-in-out;
+    @apply text-accent;
   }
 
   .mdx-content a:hover {
-    border-color: #2563eb;
-    color: #1d4ed8;
+    @apply underline;
   }
 
   /* Lists */
   .mdx-content ul,
   .mdx-content ol {
-    width: 100%;
-    text-align: left;
-    list-style-position: inside;
-    margin: 2rem 0;
-    padding: 0;
+    @apply my-1 pl-8 text-sm md:text-base;
   }
 
   .mdx-content li {
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    @apply my-0;
   }
 
-  /* Rest of styles remain the same but ensure width: 100% */
-  .mdx-content blockquote,
-  .mdx-content pre,
-  .mdx-content table {
-    width: 100%;
-    max-width: 100%;
-    margin: 2rem 0;
+  .mdx-content pre {
+    @apply m-20 my-4 overflow-x-auto rounded-2xl p-4;
   }
 
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .mdx-content p {
-      font-size: 1rem;
-    }
-
-    .mdx-content h1 {
-      font-size: 2rem;
-    }
-
-    .mdx-content h2 {
-      font-size: 1.75rem;
-    }
-
-    .mdx-content h3 {
-      font-size: 1.5rem;
-    }
+  .mdx-content code {
+    @apply font-mono text-sm text-primary;
   }
 </style>

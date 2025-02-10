@@ -20,7 +20,9 @@ const { title, description, subTitle } = Astro.props;
       <BreadCrumb />
     </div>
     <h1 class="py-2 text-xl font-bold md:py-5 md:text-3xl">{subTitle}</h1>
-    <p class="mb-2 text-sm italic md:mb-5 md:text-base">{description}</p>
+    <p class="mb-2 text-center text-sm italic md:mb-4 md:text-base">
+      {description}
+    </p>
     <hr class="mb-6 w-full border-t-2 md:mb-12" />
     <slot />
   </main>
