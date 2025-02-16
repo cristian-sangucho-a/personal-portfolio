@@ -4,7 +4,6 @@ import Tags from "../components/Tags.astro";
 
 const { frontmatter } = Astro.props;
 const { title, description, tags, technologies } = frontmatter;
-console.log("technologies:", technologies);
 ---
 
 <IndexLayout title={title} description={description} subTitle={title}>
