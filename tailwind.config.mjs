@@ -15,6 +15,9 @@ export default {
       },
     },
     extend: {
+      backdropBlur: {
+        sm: "6px",
+      },
       fontFamily: {
         sans: ["Inter", ...fontFamily.sans],
       },
