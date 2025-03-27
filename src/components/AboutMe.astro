@@ -1,28 +1,22 @@
 ---
 import { PROFILE } from "../content/PROFILE";
+import Text from "./atoms/Text.astro";
 ---
 
 <div class="animate-appear flex flex-col gap-2">
-  <p class="mb-1 text-sm font-thin">
-    {PROFILE.headLine}
-  </p>
-
-  <p class="mb-1 text-base font-medium">
-    {PROFILE.headLine2}
-  </p>
-
+  <Text text={PROFILE.headLine} size="md" weight="light" />
+  <Text text={PROFILE.headLine2} size="lg" weight="normal" />
   <hr />
+  <Text text="I use the following technologies:" size="md" weight="light" />
 
-  <p class="text-sm font-thin">I use the following technologies:</p>
-  <ul class="list-inside list-disc">
-    {PROFILE.skills.map((skill) => <li>{skill}</li>)}
+  <ul class="flex flex-col gap-1.5">
+    {
+      PROFILE.skills.map((skill) => (
+        <li class="flex items-center">
+          <span class="mr-2 text-lg">•</span>
+          <Text text={skill} size="lg" weight="light" />
+        </li>
+      ))
+    }
   </ul>
-
-  <p class="text-sm font-light">
-    More about my <a href="/projects" class="underline hover:font-bold"
-      >Projects</a
-    > and my <a href="/experiences" class="underline hover:font-bold"
-      >Experiences</a
-    >.
-  </p>
 </div>

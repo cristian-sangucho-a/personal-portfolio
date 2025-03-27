@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import Button from "../components/Button.astro";
+import Text from "../components/atoms/Text.astro";
+import SubTitle from "./atoms/SubTitle.astro";
 
 let projects = await getCollection("projects");
 ---
@@ -9,19 +11,26 @@ let projects = await getCollection("projects");
   {
     projects.map((project: any) => (
       <div>
-        <h3 class="text-lg font-semibold text-primary">
-          <a href={`/projects/${project.slug}`} class="hover:underline">
-            {project.data.title}
-          </a>
-        </h3>
-        <p class="ml-1 line-clamp-2 text-sm leading-none">
-          {project.data.description}
-        </p>
-        <p class="text-sm text-gray-600" />
+        <SubTitle 
+          text={project.data.title}
+          size="lg"
+          color="dark"
+          className="text-primary"
+          weight="semi"
+          style="progressive"
+          href={`/projects/${project.slug}`}
+        />
+        <Text
+          text={project.data.description}
+          size="lg"
+          color="dark"
+          style="none"
+          className="ml-1 line-clamp-2"
+        />
       </div>
     ))
   }
 
   <hr />
-  <Button variant="link" href="/projects"> View More...</Button>
+  <Button variant="link" href="/projects" size="xs"> View More...</Button>
 </div>

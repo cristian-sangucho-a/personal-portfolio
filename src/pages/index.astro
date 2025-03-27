@@ -4,31 +4,63 @@ import Card from "../components/Card.astro";
 import Bio from "../components/Bio.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Projects from "../components/Projects.astro";
+import Intro from "../components/Intro.astro";
+import Line from "../components/Line.astro";
+import Activities from "../components/Activities.astro";
+import ContactMe from "../components/ContactMe.astro";
 ---
 
 <Layout title="">
   <main
-    class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-12 lg:gap-4"
+    class="relative m-auto grid w-full gap-4 overflow-hidden p-1 sm:gap-2 sm:p-4 md:grid-cols-3 md:gap-6 md:p-8 lg:grid-cols-12 lg:gap-8"
   >
     <Card
-      colSpan="lg:col-span-9 md:col-span-2"
-      rowSpan="md:row-span-1 lg:row-span-4"
+      variant="borderless"
+      colSpan="col-span-full"
+      rowSpan="row-span-1 row-start-1"
+      className="custom-gradient-mini-row md:custom-gradient p-0"
     >
-      <Bio variant="primary" />
+      <Intro />
     </Card>
+
+    <!-- <Line rowSpan="row-span-1 row-start-2" /> -->
+    <Bio rowSpan="row-span-1 row-start-3" />
+    <!-- <Line rowSpan="row-span-1 row-start-4" /> -->
+
     <Card
-      colSpan="lg:col-span-3 md:col-span-1"
-      rowSpan="md:row-span-3 lg:row-span-6"
+      colSpan="col-span-full md:col-span-1 lg:col-span-4"
+      rowSpan="row-span-4 row-start-5"
       title="Projects"
+      className="m-4 md:m-0"
     >
       <Projects />
     </Card>
+
     <Card
-      colSpan="lg:col-span-3 md:col-span-1"
+      colSpan="col-span-full md:col-span-1 md:col-start-2 lg:col-span-4 lg:col-start-5"
+      rowSpan="row-span-2 row-start-9 md:row-start-5"
+      title="Contact me"
+      className="m-4 md:m-0"
+    >
+      <ContactMe />
+    </Card>
+
+    <Card
+      colSpan="col-span-full md:col-span-1 md:col-start-3 lg:col-span-4 lg:col-start-9"
+      rowSpan="row-span-4 row-start-11 md:row-start-5"
+      title="About me"
+      className="m-4 md:m-0"
+    >
+      <AboutMe />
+    </Card>
+
+    <!-- 
+    <Card
+      colSpan="col-span-3 col-start-3"
       rowSpan="md:row-span-3 lg:row-span-6"
       title="About Me"
     >
       <AboutMe />
-    </Card>
+    </Card>  -->
   </main>
 </Layout>

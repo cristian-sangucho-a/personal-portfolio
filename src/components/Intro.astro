@@ -1,0 +1,72 @@
+---
+import { PROFILE } from "../content/PROFILE";
+import Button from "../components/Button.astro";
+import { Linkedin, Github, Mail, Twitter } from "lucide-react";
+import fotoPerfl from "../assets/foto-perfil.png";
+---
+
+<div
+  class="flex h-full w-full flex-col items-center md:flex-row md:justify-around"
+>
+  <div
+    class="flex w-full flex-col items-center sm:w-11/12 md:w-3/4 md:items-start lg:w-2/3 xl:w-1/2"
+  >
+    <h1
+      class="m-0 pt-4 text-4xl font-light text-muted sm:text-5xl md:pt-8 lg:pt-24 lg:text-6xl xl:text-7xl"
+    >
+      Hi, I'm
+      <b class="font-bold text-primary">{PROFILE.first_name}</b>.
+    </h1>
+    <p
+      class="m-4 text-sm sm:text-base md:text-lg lg:py-4 lg:text-xl xl:text-2xl"
+    >
+      {PROFILE.long_description}
+    </p>
+    <div
+      class="flex flex-wrap justify-center gap-4 p-2 sm:gap-5 md:gap-6 lg:gap-8"
+    >
+      <Button
+        href={PROFILE.links.github}
+        aria-label="github profile"
+        variant="primary"
+        size="large"
+      >
+        <Github
+          className="sm:w-6.5 sm:h-6.5 lg:w-7.5 lg:h-7.5 h-6 w-6 md:h-7 md:w-7 xl:h-8 xl:w-8"
+        />
+        <span class="sr-only">GitHub Profile</span>
+      </Button>
+      <Button
+        href={PROFILE.links.github}
+        aria-label="github profile"
+        variant="primary"
+        size="large"
+      >
+        <Linkedin
+          className="sm:w-6.5 sm:h-6.5 lg:w-7.5 lg:h-7.5 h-6 w-6 md:h-7 md:w-7 xl:h-8 xl:w-8"
+        />
+        <span class="sr-only">LinkedIn Profile</span>
+      </Button>
+      <Button
+        href={PROFILE.links.github}
+        aria-label="github profile"
+        variant="primary"
+        size="large"
+      >
+        <Mail
+          className="sm:w-6.5 sm:h-6.5 lg:w-7.5 lg:h-7.5 h-6 w-6 md:h-7 md:w-7 xl:h-8 xl:w-8"
+        />
+        <span class="sr-only">Personal Mail</span>
+      </Button>
+    </div>
+  </div>
+  <div class="relative md:mt-0">
+    <img
+      src={fotoPerfl.src}
+      class="pointer-events-none mx-auto w-auto max-w-[70%] -translate-x-0 select-none transition-transform duration-300 sm:max-w-[70%] sm:-translate-x-8 sm:-translate-y-6 md:relative md:bottom-auto md:right-auto md:z-auto md:max-w-[14rem] md:translate-x-0 md:translate-y-0 lg:max-w-[16rem] xl:max-w-[22rem]"
+      width="100%"
+      height="auto"
+      alt={`image of ${PROFILE.name}`}
+    />
+  </div>
+</div>
