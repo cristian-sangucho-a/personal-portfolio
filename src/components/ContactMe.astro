@@ -14,10 +14,9 @@ import { FaWhatsapp } from "react-icons/fa";
     size="lg"
     color="dark"
     style="normal"
-    className="mb-4 max-w-2xl mx-auto leading-relaxed"
   />
   
-  <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+  <div class="flex gap-4  justify-center items-center">
     {PROFILE.contacts.map((contact) => {
       const Icon = contact.platform === "mail" ? Mail 
         : contact.platform === "whatsapp" ? FaWhatsapp 
@@ -29,10 +28,10 @@ import { FaWhatsapp } from "react-icons/fa";
           variant="secondary"
           size="large"
           aria-label={`Contact via ${contact.platform}`}
-          className="flex items-center justify-center gap-2 transition-transform hover:scale-105 min-w-[180px]"
+          className="flex items-center justify-center gap-2 transition-transform hover:scale-105 w-auto md:w-12 lg:w-auto lg:min-w-[120px]"
         >
           {Icon && <Icon size={24} className="w-6 h-6 flex-shrink-0" />}
-          <span class="hidden md:inline text-sm font-medium">
+          <span class="hidden lg:inline text-sm font-medium">
             {contact.actionText}
           </span>
         </Button>
@@ -45,6 +44,6 @@ import { FaWhatsapp } from "react-icons/fa";
     size="sm"
     color="dark"
     style="normal"
-    className="mt-4 text-cursive max-w-xl mx-auto"
+    className="italic"
   />
 </div>

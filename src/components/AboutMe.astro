@@ -1,22 +1,58 @@
 ---
 import { PROFILE } from "../content/PROFILE";
 import Text from "./atoms/Text.astro";
+// Import icons for each technology
+import {
+  FaPython,
+  FaAws,
+  FaJava,
+  FaDocker,
+  FaReact,
+  FaDatabase,
+  FaCheck,
+  FaFigma,
+} from "react-icons/fa";
+import { SiAstro, SiDjango, SiGooglecloud } from "react-icons/si";
+
+import { SiFastapi } from "react-icons/si";
 ---
 
 <div class="animate-appear flex flex-col gap-2">
-  <Text text={PROFILE.headLine} size="md" weight="light" />
+  <Text text={PROFILE.headLine} size="md" weight="light" color="primary" />
   <Text text={PROFILE.headLine2} size="lg" weight="normal" />
+
   <hr />
+
   <Text text="I use the following technologies:" size="md" weight="light" />
 
-  <ul class="flex flex-col gap-1.5">
+  <div class="mt-4 grid grid-cols-3 gap-4">
     {
-      PROFILE.skills.map((skill) => (
-        <li class="flex items-center">
-          <span class="mr-2 text-lg">•</span>
-          <Text text={skill} size="lg" weight="light" />
-        </li>
-      ))
+      PROFILE.skills.map((skill) => {
+        // Map skills to their corresponding icons
+        const getIcon = (skill: string) => {
+          if (skill.includes("Python")) return FaPython;
+          if (skill.includes("Figma")) return FaFigma;
+          if (skill.includes("FastApi")) return SiFastapi;
+          if (skill.includes("Java")) return FaJava;
+          if (skill.includes("GCP")) return SiGooglecloud;
+          if (skill.includes("AWS")) return FaAws;
+          if (skill.includes("React")) return FaReact;
+          if (skill.includes("Docker")) return FaDocker;
+          if (skill.includes("SQL")) return FaDatabase;
+          if (skill.includes("Astro")) return SiAstro;
+          if (skill.includes("Django")) return SiDjango;
+          return FaCheck; // Default icon from react-icons/fa
+        };
+
+        const Icon = getIcon(skill);
+
+        return (
+          <div class="flex flex-col items-center justify-center">
+            <Icon className=" w-5 h-5 lg:w-8 lg:h-8 mb-1 text-primary hover:text-destructive" />
+            <Text text={skill} size="sm" weight="light" color="primary" />
+          </div>
+        );
+      })
     }
-  </ul>
+  </div>
 </div>
