@@ -4,6 +4,7 @@
     "components",
     "settings",
     "data",
-    "content"
+    "content",
+    "dependencies"
   ]
 }
