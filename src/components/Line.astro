@@ -1,0 +1,10 @@
+---
+interface Props {
+  rowSpan?: string
+}
+
+const { rowSpan } = Astro.props
+const baseStyle = `col-span-full my-2 h-px w-full border-2 bg-muted md:my-8`
+const conbinedStyles = `${baseStyle} ${rowSpan}`
+---
+<hr class={conbinedStyles} />
