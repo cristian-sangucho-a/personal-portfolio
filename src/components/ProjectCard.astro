@@ -15,7 +15,7 @@ const { href, heading, description, altText, imagePath } = Astro.props;
 
 <a href={href}>
   <Card
-    className={`transform-y-[-40%] align-start perspective-1200 group relative flex-none transform justify-start overflow-hidden p-0 shadow-lg transition duration-75 ease-in-out ${href ? "cursor-pointer hover:border-primary" : ""} `}
+    className={`align-start perspective-1200 group relative flex-none transform justify-start overflow-hidden p-0 shadow-lg transition duration-75 ease-in-out ${href ? "cursor-pointer hover:border-primary" : ""} `}
   >
     <img
       src={imagePath}
