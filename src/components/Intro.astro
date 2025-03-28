@@ -3,6 +3,9 @@ import { PROFILE } from "../content/PROFILE";
 import Button from "../components/Button.astro";
 import { Linkedin, Github, Mail, Twitter } from "lucide-react";
 import fotoPerfl from "../assets/foto-perfil.png";
+import Text from "./atoms/Text.astro";
+import { Image } from 'astro:assets';
+
 ---
 
 <div
@@ -31,24 +34,29 @@ import fotoPerfl from "../assets/foto-perfil.png";
         variant="primary"
         size="large"
       >
-        <Github
+        <div class="flex items-center gap-4">
+          <Github
           className="sm:w-6.5 sm:h-6.5 lg:w-7.5 lg:h-7.5 h-6 w-6 md:h-7 md:w-7 xl:h-8 xl:w-8"
         />
-        <span class="sr-only">GitHub Profile</span>
+        <Text text="Github" size="lg" weight="bold" className="text-white" />
+        </div>
       </Button>
       <Button
-        href={PROFILE.links.github}
+        href={PROFILE.links.linkedin}
         aria-label="github profile"
         variant="primary"
         size="large"
       >
-        <Linkedin
+        <div class="flex items-center gap-4">
+          <Linkedin
           className="sm:w-6.5 sm:h-6.5 lg:w-7.5 lg:h-7.5 h-6 w-6 md:h-7 md:w-7 xl:h-8 xl:w-8"
         />
-        <span class="sr-only">LinkedIn Profile</span>
+        <Text text="LinkedIn" size="lg" weight="bold" className="text-white" />
+        </div>
+
       </Button>
-      <Button
-        href={PROFILE.links.github}
+      <!-- <Button
+        href={PROFILE.links.}
         aria-label="github profile"
         variant="primary"
         size="large"
@@ -57,16 +65,19 @@ import fotoPerfl from "../assets/foto-perfil.png";
           className="sm:w-6.5 sm:h-6.5 lg:w-7.5 lg:h-7.5 h-6 w-6 md:h-7 md:w-7 xl:h-8 xl:w-8"
         />
         <span class="sr-only">Personal Mail</span>
-      </Button>
+      </Button> -->
     </div>
   </div>
   <div class="relative md:mt-0">
-    <img
-      src={fotoPerfl.src}
-      class="pointer-events-none mx-auto w-auto max-w-[70%] -translate-x-0 select-none transition-transform duration-300 sm:max-w-[70%] sm:-translate-x-8 sm:-translate-y-6 md:relative md:bottom-auto md:right-auto md:z-auto md:max-w-[14rem] md:translate-x-0 md:translate-y-0 lg:max-w-[16rem] xl:max-w-[22rem]"
-      width="100%"
-      height="auto"
-      alt={`image of ${PROFILE.name}`}
-    />
-  </div>
+  <Image
+    src={fotoPerfl}
+    class="pointer-events-none mx-auto w-auto max-w-[70%] -translate-x-0 select-none transition-transform duration-300 sm:max-w-[70%] sm:-translate-x-8 sm:-translate-y-6 md:relative md:bottom-auto md:right-auto md:z-auto md:max-w-[14rem] md:translate-x-0 md:translate-y-0 lg:max-w-[16rem] xl:max-w-[22rem]"
+    width={600}
+    height={800}
+    format="webp"
+    quality={80}
+    loading="eager"
+    alt={`image of ${PROFILE.name}`}
+  />
+</div>
 </div>
