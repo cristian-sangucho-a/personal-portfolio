@@ -4,19 +4,20 @@ interface Props {
   size?: "small" | "medium" | "large" | "xs";
   href?: string;
   className?: string;
+  openInNewTab?: boolean;
 }
 
-const { variant = "primary", size = "medium", href, className} = Astro.props;
+const { variant = "primary", size = "medium", href, className, openInNewTab = true } = Astro.props;
 
 const baseStyles = "rounded-md focus:outline-none focus:ring";
 const variantStyles = {
   primary: "bg-primary text-primary-foreground hover:bg-secondary ",
-  secondary: "bg-secondary text-secondary-foreground hover:bg-destructive hover:text-destructive-foreground",
+  secondary:
+    "bg-secondary text-secondary-foreground hover:bg-tertiary hover:text-tertiary-foreground",
   link: "text-primary underline-offset-4 hover:underline text-opacity-80 text-sm",
 };
 const sizeStyles = {
-  xs: 
-    "px-2 py-1 text-xs sm:px-3 sm:py-1.5 sm:text-sm md:px-4 md:py-2 md:text-base lg:px-5 lg:py-2.5 lg:text-lg xl:px-6 xl:py-3 xl:text-xl",
+  xs: "px-2 py-1 text-xs sm:px-3 sm:py-1.5 sm:text-sm md:px-4 md:py-2 md:text-base lg:px-5 lg:py-2.5 lg:text-lg xl:px-6 xl:py-3 xl:text-xl",
   small:
     "px-3 py-2 text-sm sm:px-4 sm:py-2.5 sm:text-base md:px-5 md:py-3 md:text-lg lg:px-6 lg:py-3.5 lg:text-xl xl:px-7 xl:py-4 xl:text-2xl",
   medium:
@@ -30,7 +31,12 @@ const combinedStyles = `${baseStyles} ${className} ${variantStyles[variant]} ${s
 
 {
   href ? (
-    <a href={href} class={combinedStyles}>
+    <a
+      href={href}
+      class={combinedStyles}
+      target={openInNewTab ? "_blank" : undefined}
+      rel={openInNewTab ? "noopener noreferrer" : undefined}
+    >
       <slot />
     </a>
   ) : (
