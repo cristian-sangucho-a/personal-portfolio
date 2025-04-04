@@ -7,12 +7,18 @@ import {
   FaDatabase,
   FaCheck,
   FaFigma,
+  FaWhatsapp,
+  FaDiscord,
+  FaMailBulk,
 } from "react-icons/fa";
 import { SiAstro, SiDjango, SiGooglecloud, SiFastapi } from "react-icons/si";
 
 import type { IconType } from "react-icons";
 
 const icons: Record<string, IconType> = {
+  mail: FaMailBulk,
+  whatsapp: FaWhatsapp,
+  discord: FaDiscord,
   python: FaPython,
   awscloud: FaAws,
   javaee: FaJava,
@@ -28,17 +34,18 @@ const icons: Record<string, IconType> = {
 };
 
 const sizeClasses = {
-  sm: "w-4 h-4 lg:w-6 lg:h-6",
-  md: "w-5 h-5 lg:w-8 lg:h-8",
-  lg: "w-6 h-6 lg:w-10 lg:h-10",
+  sm: "w-4 h-4 lg:w-6 lg:h-6 xl:w-8 xl:h-8",
+  md: "w-5 h-5 lg:w-8 lg:h-8 xl:w-10 xl:h-10",
+  lg: "w-6 h-6 lg:w-10 lg:h-10 xl:w-12 xl:h-12",
 };
 
 const colorClasses = {
-  primary: "text-primary hover:text-tertiary",
-  secondary: "text-secondary hover:text-primary",
-  tertiary: "text-tertiary hover:text-secondary",
+  primary: "text-primary hover:text-primary-foreground",
+  secondary: "text-secondary hover:text-secondary-foreground",
+  tertiary: "text-tertiary hover:text-tertiary-foreground",
   white: "text-white",
   black: "text-black",
+  none: "",
 };
 
 interface IconProps {

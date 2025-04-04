@@ -1,13 +1,19 @@
 ---
 interface Props {
   variant?: "primary" | "secondary" | "link";
-  size?: "small" | "medium" | "large" | "xs";
+  size?: "small" | "medium" | "large" | "xs" | "large_without_margin";
   href?: string;
   className?: string;
   openInNewTab?: boolean;
 }
 
-const { variant = "primary", size = "medium", href, className, openInNewTab = true } = Astro.props;
+const {
+  variant = "primary",
+  size = "medium",
+  href,
+  className,
+  openInNewTab = true,
+} = Astro.props;
 
 const baseStyles = "rounded-md focus:outline-none focus:ring";
 const variantStyles = {
@@ -24,6 +30,8 @@ const sizeStyles = {
     "px-5 py-3 text-base sm:px-6 sm:py-3.5 sm:text-lg md:px-7 md:py-4 md:text-xl lg:px-8 lg:py-4.5 lg:text-2xl xl:px-9 xl:py-5 xl:text-3xl",
   large:
     "px-7 py-3 text-lg sm:px-8 sm:py-3.5 sm:text-xl md:px-9 md:py-4 md:text-2xl lg:px-10 lg:py-4.5 lg:text-3xl xl:px-11 xl:py-5 xl:text-4xl",
+  large_without_margin:
+    "px-3 py-3 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl ",
 };
 
 const combinedStyles = `${baseStyles} ${className} ${variantStyles[variant]} ${sizeStyles[size]}`;

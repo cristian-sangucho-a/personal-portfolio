@@ -77,6 +77,11 @@ export const PROFILE = {
       link: "https://wa.me/593986195002",
       actionText: "Contact via WhatsApp",
     },
+    {
+      platform: "discord",
+      link: "discord:/users/799151978105405441",
+      actionText: "cristtsirc #8196",
+    },
   ],
   studies: [
     // studies, qualifications and certifications
