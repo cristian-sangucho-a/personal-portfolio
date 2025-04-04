@@ -40,9 +40,9 @@ const sizeClasses = {
 };
 
 const colorClasses = {
-  primary: "text-primary hover:text-primary-foreground",
-  secondary: "text-secondary hover:text-secondary-foreground",
-  tertiary: "text-tertiary hover:text-tertiary-foreground",
+  primary: "text-primary",
+  secondary: "text-secondary",
+  tertiary: "text-tertiary",
   white: "text-white",
   black: "text-black",
   none: "",
