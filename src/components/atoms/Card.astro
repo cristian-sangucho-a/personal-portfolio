@@ -1,6 +1,6 @@
 ---
-import Text from "./atoms/Text.astro";
-import Title from "./atoms/Title.astro";
+import Text from "./Text.astro";
+import Title from "./Title.astro";
 
 interface Props {
   title?: string;
@@ -40,7 +40,7 @@ const conbinedStyles = `${baseStyle} ${noPadding ? "" : "p-4"}  ${colSpan} ${row
             {badge}
           </span>
         )}
-        <Title 
+        <Title
           text={title}
           size="lg"
           weight="bold"
@@ -50,11 +50,6 @@ const conbinedStyles = `${baseStyle} ${noPadding ? "" : "p-4"}  ${colSpan} ${row
       </div>
     )
   }
-  <Text
-    text={description || ""}
-    size="lg"
-    color="dark"
-    style="progressive"
-  />
+  <Text text={description || ""} size="lg" color="dark" style="progressive" />
   <slot />
 </div>
