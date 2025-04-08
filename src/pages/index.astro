@@ -8,6 +8,7 @@ import Intro from "../components/organisms/Intro.astro";
 import Line from "../components/atoms/Line.astro";
 import Activities from "../components/Activities.astro";
 import ContactMe from "../components/organisms/ContactMe.astro";
+import GetMyResume from "../components/organisms/GetMyResume.astro";
 ---
 
 <Layout title="">
@@ -46,8 +47,17 @@ import ContactMe from "../components/organisms/ContactMe.astro";
     </Card>
 
     <Card
+      colSpan="col-span-full md:col-span-1 md:col-start-2 lg:col-span-4 lg:col-start-5"
+      rowSpan="row-span-2 row-start-11 md:row-start-7"
+      title="Here’s my resume"
+      className="m-4 md:m-0"
+    >
+      <GetMyResume />
+    </Card>
+
+    <Card
       colSpan="col-span-full md:col-span-1 md:col-start-3 lg:col-span-4 lg:col-start-9"
-      rowSpan="row-span-4 row-start-11 md:row-start-5"
+      rowSpan="row-span-4 row-start-13 md:row-start-5"
       title="Skills Overview"
       className="m-4 md:m-0"
     >

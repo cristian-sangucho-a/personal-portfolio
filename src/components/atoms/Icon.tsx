@@ -10,12 +10,14 @@ import {
   FaWhatsapp,
   FaDiscord,
   FaMailBulk,
+  FaDownload,
 } from "react-icons/fa";
 import { SiAstro, SiDjango, SiGooglecloud, SiFastapi } from "react-icons/si";
 
 import type { IconType } from "react-icons";
 
 const icons: Record<string, IconType> = {
+  download: FaDownload,
   mail: FaMailBulk,
   whatsapp: FaWhatsapp,
   discord: FaDiscord,
@@ -66,7 +68,7 @@ export default function Icon({
 
   return (
     <IconComponent
-      className={`transition-transform hover:scale-125 ${sizeClasses[size]} ${colorClasses[color]} ${className} `}
+      className={`${sizeClasses[size]} ${colorClasses[color]} ${className} `}
     />
   );
 }

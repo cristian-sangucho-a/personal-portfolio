@@ -83,6 +83,12 @@ export const PROFILE = {
       actionText: "cristtsirc #8196",
     },
   ],
+  resume: {
+    link: "/Cristian-Sangucho-es-cv.pdf",
+    text: "Everything I’ve done, all in one place. \n Download it to learn more about me and what I can bring to the table.",
+    advise:
+      "I’m open to new opportunities and challenges. If you’re looking for a passionate and dedicated software engineer, feel free to reach out!",
+  },
   studies: [
     // studies, qualifications and certifications
     {

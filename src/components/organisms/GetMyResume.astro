@@ -1,0 +1,30 @@
+---
+import Text from "../atoms/Text.astro";
+import Button from "../atoms/Button.astro";
+import Icon from "../atoms/Icon.tsx";
+import { PROFILE } from "@/content/PROFILE";
+---
+
+<div class="flex items-center justify-center gap-2 text-center md:gap-4">
+  <Text
+    text={PROFILE.resume.text}
+    size="lg"
+    color="dark"
+    style="normal"
+    className="mb-4 text-justify"
+  />
+  <Button
+    href={PROFILE.resume.link}
+    variant="secondary"
+    size="large_without_margin"
+    aria-label="Download my resume"
+    className="transition-transform hover:scale-105"
+  >
+    <Icon
+      icon="download"
+      size="lg"
+      color="none"
+      className="hover:scale-102 transition-transform"
+    />
+  </Button>
+</div>
